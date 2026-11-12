@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Santhanamari G — AWS Certified Solutions Architect – Associate with hands-on project experience in AWS cloud infrastructure, DevOps automation, Kubernetes, CI/CD, and backend development.">
+  <meta name="keywords" content="Santhanamari G, AWS Cloud Engineer, DevOps Engineer, Cloud Support Engineer, AWS, Docker, Kubernetes, Terraform, Jenkins, Python, Django, FastAPI">
+  <meta name="author" content="Santhanamari">
+  <meta name="theme-color" content="#0f172a">
+  <title>Santhanamari G | AWS Cloud Support &amp; DevOps Support Engineer</title>
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-soft: #eff6ff;
+      --ink: #0f172a;
+      --text: #475569;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --surface: #ffffff;
+      --surface-soft: #f8fafc;
+      --navy: #0b1224;
+      --radius: 16px;
+      --shadow: 0 14px 35px rgba(15, 23, 42, .07);
+      --max-width: 1240px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      font-family: Inter, "Segoe UI", Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--surface);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(92%, var(--max-width)); margin-inline: auto; }
+    section { padding: 34px 0; scroll-margin-top: 76px; }
+    .section-heading { text-align: center; margin-bottom: 10px; }
+    .eyebrow {
+      display: inline-block;
+      color: var(--primary);
+      background: var(--primary-soft);
+      border: 1px solid #dbeafe;
+      border-radius: 999px;
+      padding: 5px 12px;
+      margin-bottom: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .section-title {
+      color: var(--ink);
+      font-size: clamp(27px, 3vw, 36px);
+      line-height: 1.2;
+      letter-spacing: -.8px;
+      margin-bottom: 10px;
+    }
+    .section-title span { color: var(--primary); }
+    .section-description {
+      max-width: 690px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+    .nav {
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo {
+      color: var(--ink);
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -.8px;
+      white-space: nowrap;
+    }
+    .logo span { color: var(--primary); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 23px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: #334155;
+      font-size: 13px;
+      font-weight: 600;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--primary); }
+
+    .button-row { display: flex; flex-wrap: wrap; gap: 11px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 17px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      color: #fff;
+      background: var(--primary);
+      box-shadow: 0 7px 16px rgba(37,99,235,.18);
+    }
+    .btn-primary:hover { background: var(--primary-dark); }
+    .btn-secondary {
+      color: var(--ink);
+      background: #fff;
+      border-color: #cbd5e1;
+    }
+    .btn-secondary:hover { color: var(--primary); border-color: var(--primary); background: var(--primary-soft); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 38px 0 40px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(37,99,235,.12), transparent 30%),
+        linear-gradient(135deg, #fff 0%, #f7faff 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr);
+      align-items: center;
+      gap: 24px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      margin-bottom: 12px;
+      color: var(--primary-dark);
+      background: var(--primary-soft);
+      border: 1px solid #dbeafe;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      background: #16a34a;
+      border-radius: 50%;
+    }
+    .hero h1 {
+      max-width: 720px;
+      color: var(--ink);
+      font-size: clamp(38px, 5.2vw, 61px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: var(--primary); }
+    .hero-role {
+      color: #334155;
+      font-size: clamp(19px, 2vw, 23px);
+      font-weight: 650;
+      margin-bottom: 15px;
+    }
+    .hero-copy {
+      max-width: 670px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 13px; }
+    .text-link { color: var(--primary); font-size: 13px; font-weight: 700; }
+    .text-link:hover { text-decoration: underline; }
+
+    .profile-card {
+      position: relative;
+      padding: 18px;
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid #dbe5f3;
+      border-radius: 20px;
+      box-shadow: 0 22px 55px rgba(30, 64, 175, .10);
+    }
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #2563eb, #60a5fa, #93c5fd);
+    }
+    .profile-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .profile-card-label {
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+    .profile-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 9px;
+      color: #15803d;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .profile-status::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: #22c55e;
+      border-radius: 50%;
+    }
+    .profile-card h3 {
+      color: var(--ink);
+      font-size: 23px;
+      line-height: 1.3;
+      letter-spacing: -.5px;
+      margin-bottom: 9px;
+    }
+    .profile-card-intro {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .profile-stack {
+      display: grid;
+      gap: 6px;
+    }
+    .stack-row {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      background: #f8fafc;
+      border: 1px solid #e8eef7;
+      border-radius: 11px;
+    }
+    .stack-icon {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      background: #eff6ff;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .stack-row strong {
+      display: block;
+      color: var(--ink);
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+    .stack-row span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+    .profile-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 20px;
+      padding-top: 17px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .profile-card-footer strong { color: var(--ink); }
+    #about { background: #fff; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .panel {
+      padding: 22px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 25px rgba(15,23,42,.035);
+    }
+    .about-copy p { margin-bottom: 8px; }
+    .about-copy p:last-child { margin-bottom: 0; }
+    .panel h3 { color: var(--ink); font-size: 17px; margin-bottom: 9px; }
+    .overview-list { list-style: none; }
+    .overview-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+    }
+    .overview-list li:last-child { border-bottom: 0; }
+    .overview-list strong { color: var(--ink); white-space: nowrap; }
+    .overview-list span { text-align: right; }
+
+    #skills { background: var(--surface-soft); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 13px;
+    }
+    .skill-card {
+      padding: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .skill-card:hover {
+      transform: translateY(-3px);
+      border-color: #bfdbfe;
+      box-shadow: var(--shadow);
+    }
+    .skill-card h3 { color: var(--ink); font-size: 15px; margin-bottom: 8px; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .skill-tags span {
+      display: inline-flex;
+      padding: 5px 9px;
+      color: #1d4ed8;
+      background: var(--primary-soft);
+      border: 1px solid #dbeafe;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 650;
+    }
+
+    #projects { background: #fff; }
+    .project-category { margin: 16px 0 9px; }
+    .project-category:first-of-type { margin-top: 0; }
+    .project-category h3 { color: var(--ink); font-size: 20px; }
+    .project-category p { color: var(--muted); font-size: 13px; }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: #bfdbfe;
+      box-shadow: var(--shadow);
+    }
+    .project-number {
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      margin-bottom: 8px;
+    }
+    .project-card h4 { color: var(--ink); font-size: 18px; line-height: 1.4; margin-bottom: 10px; }
+    .project-card > p { font-size: 13px; margin-bottom: 8px; }
+    .project-points { padding-left: 18px; margin: 0 0 9px; color: var(--text); }
+    .project-points li { padding: 2px 0; font-size: 12.5px; line-height: 1.5; }
+    .project-card .skill-tags { margin-top: auto; margin-bottom: 9px; }
+    .project-links { display: flex; align-items: center; gap: 15px; }
+    .project-links a { color: var(--primary); font-size: 13px; font-weight: 700; }
+    .project-links a:hover { text-decoration: underline; }
+
+    #certifications { background: var(--surface-soft); }
+    .certification-card {
+      max-width: 850px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 22px;
+      padding: 23px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+    .cert-mark {
+      width: 76px;
+      height: 76px;
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      background: var(--primary-soft);
+      border: 1px solid #dbeafe;
+      border-radius: 18px;
+      font-size: 25px;
+      font-weight: 850;
+    }
+    .certification-card h3 { color: var(--ink); font-size: 19px; margin-bottom: 5px; }
+    .certification-card p { font-size: 13px; margin-bottom: 7px; }
+    .cert-meta { color: var(--muted); font-size: 12px; }
+    #education { background: #fff; }
+    .education-card {
+      max-width: 850px;
+      margin: auto;
+      padding: 22px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--primary);
+      border-radius: 13px;
+      box-shadow: 0 8px 25px rgba(15,23,42,.035);
+    }
+    .education-card h3 { color: var(--ink); font-size: 20px; margin-bottom: 5px; }
+    .education-card .institution { color: var(--primary); font-weight: 650; margin-bottom: 13px; }
+    .education-details { display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 13px; }
+
+    #contact { background: var(--surface-soft); }
+    .contact-box {
+      max-width: 850px;
+      margin: auto;
+      padding: 26px;
+      text-align: center;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+    .contact-box > p { max-width: 650px; margin: 0 auto 12px; }
+    .contact-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 22px;
+      margin: 0 0 13px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .contact-details a { color: var(--primary); font-weight: 650; }
+    .contact-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 11px; }
+    footer {
+      padding: 18px 0;
+      color: #cbd5e1;
+      background: var(--navy);
+      text-align: center;
+      font-size: 12px;
+    }
+    footer p + p { margin-top: 4px; color: #94a3b8; }
+
+    @media (max-width: 980px) {
+      .nav-links { gap: 14px; }
+      .hero-grid { gap: 30px; grid-template-columns: 1.1fr .9fr; }
+      .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 760px) {
+      .nav { flex-direction: column; justify-content: center; padding: 13px 0; gap: 9px; }
+      .nav-links { justify-content: center; flex-wrap: wrap; gap: 7px 15px; }
+      .nav-links a { font-size: 12px; }
+      .hero { padding: 34px 0; }
+      .hero-grid, .about-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 20px; }
+      .profile-card { max-width: 560px; }
+      section { padding: 32px 0; }
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .container { width: min(91%, var(--max-width)); }
+      .hero h1 { font-size: 39px; letter-spacing: -1.4px; }
+      .hero-copy { font-size: 14px; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .panel, .skill-card, .project-card, .certification-card, .education-card, .contact-box { padding: 14px; }
+      .certification-card { grid-template-columns: 1fr; text-align: center; }
+      .cert-mark { margin: auto; }
+      .overview-list li { align-items: flex-start; }
+      .overview-list span { max-width: 58%; }
+      .button-row .btn { flex: 1 1 auto; }
+    }
+    /* Compact spacing overrides */
+    .section-heading .eyebrow { margin-bottom: 7px; }
+    .section-title { margin-bottom: 6px; }
+    .section-description { line-height: 1.5; }
+    .project-category h3 { font-size: 18px; }
+    .profile-card-intro { margin-bottom: 10px; }
+    .contact-box > p { margin-bottom: 12px; }
+
+    @media (max-width: 520px) {
+      section { padding: 26px 0; }
+      .hero { padding: 28px 0; }
+      .section-heading { margin-bottom: 13px; }
+      .hero-grid { gap: 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="logo" href="#home">Santhanamari</a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certification</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="hero-badge"><span class="badge-dot"></span> AWS Certified Solutions Architect – Associate</span>
+          <h1>Hi, I'm <span>Santhanamari</span></h1>
+          <p class="hero-role">Aspiring Cloud & DevOps Professional</p>
+          <p class="hero-copy">
+            B.Sc. Information Technology graduate with hands-on project experience in AWS cloud infrastructure,
+            CI/CD automation, containerization, Kubernetes, and infrastructure provisioning.
+          </p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="#projects">Explore Projects</a>
+            <a class="btn btn-secondary" href="#contact">Contact Me</a>
+          </div>
+          <div class="hero-links">
+            <a class="text-link" href="https://www.linkedin.com/in/santhanamarigurunathan/" target="_blank" rel="noopener noreferrer">LinkedIn Profile ↗</a>
+            <a class="text-link" href="https://github.com/SanthanamariG/AWS-DevOps-Projects-Portfolio" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+          </div>
+        </div>
+
+        <aside class="profile-card" aria-label="Cloud and DevOps technical profile">
+          <div class="profile-card-top">
+            <span class="profile-card-label">TECHNICAL PROFILE</span>
+            <span class="profile-status">Open to opportunities</span>
+          </div>
+
+          <h3>Aspiring Cloud & DevOps Professional.</h3>
+          <p class="profile-card-intro">
+            Hands-on project experience with AWS cloud services, CI/CD automation, containerization, infrastructure as code, and backend development.  
+          </p>
+
+          <div class="profile-stack">
+            <div class="stack-row">
+              <div class="stack-icon">AWS</div>
+              <div>
+                <strong>Cloud Infrastructure</strong>
+                <span>EC2 · VPC · IAM · S3 · EKS · ECR</span>
+              </div>
+            </div>
+            <div class="stack-row">
+              <div class="stack-icon">CI/CD</div>
+              <div>
+                <strong>Automation &amp; Delivery</strong>
+                <span>Jenkins · GitHub Actions · Argo CD · Terraform</span>
+              </div>
+            </div>
+            <div class="stack-row">
+              <div class="stack-icon">K8s</div>
+              <div>
+                <strong>Containers &amp; Monitoring</strong>
+                <span>Docker · Kubernetes · Prometheus · Grafana</span>
+              </div>
+            </div>
+          <div class="profile-card-footer">
+            <span><strong>AWS Certified Solutions Architect – Associate</strong> Certified</span>
+            <span>Bengaluru, India</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Profile</span>
+          <h2 class="section-title">About <span>Me</span></h2>
+          <p class="section-description">My education, technical background, and professional interests.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="panel about-copy">
+            <h3>Professional Summary</h3>
+            <p>
+              I am a 2026 B.Sc. Information Technology graduate and AWS Certified Solutions Architect – Associate
+              with practical project experience across cloud infrastructure, application deployment, and backend development.
+            </p>
+            <p>
+              My Cloud and DevOps projects involve provisioning AWS resources with Terraform, building CI/CD
+              workflows with Jenkins and GitHub Actions, deploying containerized applications to Amazon EKS,
+              and integrating security scanning and monitoring tools.
+            </p>
+            <p>
+              I am seeking an entry-level Cloud Engineer, DevOps Engineer, or Cloud Support Engineer opportunity where I can contribute to technical teams, apply my existing knowledge, and continue developing my technical skills.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h3>Professional Overview</h3>
+            <ul class="overview-list">
+              <li><strong>Education</strong><span>B.Sc. Information Technology</span></li>
+              <li><strong>Graduation</strong><span>2026</span></li>
+              <li><strong>CGPA</strong><span>7.76 / 10.0</span></li>
+              <li><strong>Certification</strong><span>AWS SAA-C03</span></li>
+              <li><strong>Specialization</strong><span>AWS Cloud &amp; DevOps</span></li>
+              <li><strong>Location</strong><span>Bengaluru, Karnataka</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Technical Toolkit</span>
+          <h2 class="section-title">Technical <span>Skills</span></h2>
+          <p class="section-description">Technologies and tools represented in my resume and project experience.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <h3>AWS Cloud</h3>
+            <div class="skill-tags">
+              <span>EC2</span><span>S3</span><span>IAM</span><span>VPC</span><span>EKS</span>
+              <span>ECR</span><span>Lambda</span><span>Step Functions</span><span>API Gateway</span><span>CloudWatch</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Containers &amp; Orchestration</h3>
+            <div class="skill-tags">
+              <span>Docker</span><span>Kubernetes</span><span>Amazon EKS</span><span>Kubernetes Manifests</span><span>Helm</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>CI/CD &amp; Version Control</h3>
+            <div class="skill-tags">
+              <span>Jenkins</span><span>GitHub Actions</span><span>Git</span><span>GitHub</span><span>Argo CD</span><span>Maven</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Infrastructure as Code</h3>
+            <div class="skill-tags">
+              <span>Terraform</span><span>Infrastructure Provisioning</span><span>AWS Resource Configuration</span><span>Ansible</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>DevSecOps &amp; Monitoring</h3>
+            <div class="skill-tags">
+              <span>SonarQube</span><span>Trivy</span><span>OWASP Dependency-Check</span>
+              <span>Prometheus</span><span>Grafana</span><span>CloudWatch</span><span>Elasticsearch</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Scripting</h3>
+            <div class="skill-tags">
+              <span>Linux</span><span>Shell Scripting</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Selected Work</span>
+          <h2 class="section-title">Featured <span>Projects</span></h2>
+          <p class="section-description">Cloud, DevOps, and backend development projects demonstrating practical implementation.</p>
+        </div>
+
+        <div class="project-category">
+          <h3>Cloud &amp; DevOps Projects</h3>
+          <p>Infrastructure provisioning, deployment automation, security scanning, and cloud monitoring.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <span class="project-number">PROJECT 01 · CLOUD / DEVSECOPS</span>
+            <h4>DevSecOps Three-Tier Application on AWS EKS</h4>
+            <p>Deployed a three-tier application with frontend, backend, and database components on Amazon EKS using an automated delivery workflow.</p>
+            <ul class="project-points">
+              <li>Deployed a three-tier application comprising frontend, backend, and database components on Amazon EKS using a Jenkins CI/CD pipeline.</li>
+              <li>Integrated SonarQube, Trivy, and OWASP Dependency-Check  into the CI/CD pipeline for code-quality analysis, container image scanning, and dependency vulnerability detection.</li>
+              <li>Automated Docker image publishing to Amazon ECR and Kubernetes application deployments using Argo CD, GitOps workflows.</li>
+              <li>Configured Prometheus and Grafana dashboards to monitor Kubernetes node availability, pod status, and deployment replica counts; validated the environment with 2 nodes and 22 running pods.</li>
+            </ul>
+            <div class="skill-tags">
+              <span>AWS EKS</span><span>Jenkins</span><span>Docker</span><span>ECR</span><span>Argo CD</span>
+              <span>Terraform</span><span>SonarQube</span><span>Trivy</span><span>Prometheus</span><span>Grafana</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/SanthanamariG/AWS-DevOps-Projects-Portfolio/tree/main/01-Devsecops-three-tier-aws-eks" target="_blank" rel="noopener noreferrer">Explore GitHub profile ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">PROJECT 02 · CLOUD AUTOMATION</span>
+            <h4>Kubernetes Application Deployment Using Terraform, EKS &amp; Jenkins</h4>
+            <p>Provisioned AWS infrastructure and automated Kubernetes application deployment using Terraform and Jenkins.</p>
+            <ul class="project-points">
+              <li>Provisioned an Amazon EKS cluster, VPC, and worker node groups using Terraform for repeatable infrastructure deployment.</li>
+              <li>Built a Jenkins pipeline with 2 stages to automate infrastructure provisioning and Kubernetes application deployment.</li>  
+              <li>Deployed 1 Kubernetes Deployment with 2 replicas and 1 LoadBalancer Service on Amazon EKS using Kubernetes manifests.</li>
+              <li>Configured AWS IAM roles and Kubernetes access permissions to enable secure communication between Jenkins and Amazon EKS during automated deployments.</li>
+            </ul>
+            <div class="skill-tags">
+              <span>AWS</span><span>Terraform</span><span>Amazon EKS</span><span>Kubernetes</span><span>Jenkins</span><span>IAM</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/SanthanamariG/AWS-DevOps-Projects-Portfolio/tree/main/02-Kubernetes%20Application%20Deployment%20using%20Terraform%2C%20EKS%20and%20Jenkins" target="_blank" rel="noopener noreferrer">Explore GitHub profile ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">PROJECT 03 · CI/CD</span>
+            <h4>CI/CD Pipeline with GitHub Actions and Amazon EKS</h4>
+            <p>Built an automated workflow to build, scan, package, and deploy an application to a Kubernetes environment.</p>
+            <ul class="project-points">
+              <li>Automated application build and deployment using GitHub Actions, with 4 successful workflow runs recorded in the repository.</li>
+              <li>Built and published the Tic-Tac-Toe Docker image (tic-tac-toe:latest) to Docker Hub, verifying the image digest in workflow logs.</li>
+              <li>Automated deployment to Amazon EKS using AWS CLI and Kubernetes manifests, creating 1 Deployment and 1 Kubernetes Service.</li>
+              <li>Completed the combined build, scanning, and deployment workflow in 7 minutes 11 seconds, including Trivy security scanning.</li>
+            </ul>
+            <div class="skill-tags">
+              <span>GitHub Actions</span><span>Docker</span><span>Docker Hub</span><span>AWS EKS</span><span>AWS CLI</span><span>Trivy</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/SanthanamariG/AWS-DevOps-Projects-Portfolio/tree/main/03-CICD%20Pipeline%20with%20GitHub%20Actions%20and%20Amazon%20EKS" target="_blank" rel="noopener noreferrer">Explore GitHub profile ↗</a>
+            </div>
+          </article>
+        </div>
+
+      </section>
+
+    <section id="certifications">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Professional Credential</span>
+          <h2 class="section-title">Professional <span>Certification</span></h2>
+          <p class="section-description">Cloud certification supporting my knowledge of AWS architecture and services.</p>
+        </div>
+
+        <article class="certification-card">
+          <div class="cert-mark" aria-hidden="true">AWS</div>
+          <div>
+            <h3>AWS Certified Solutions Architect – Associate</h3>
+            <p><strong>Issuing organization:</strong> Amazon Web Services (AWS)</p>
+            <p><strong>Exam code:</strong> SAA-C03 &nbsp; | &nbsp; <strong>Earned:</strong> June 2026</p>
+            <p class="cert-meta">Knowledge areas include cloud architecture, networking, identity and access management, storage, compute, security, reliability, and cost optimization.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Academic Background</span>
+          <h2 class="section-title">Educational <span>Background</span></h2>
+          <p class="section-description">Academic qualification and institution.</p>
+        </div>
+
+        <article class="education-card">
+          <h3>B.Sc. Information Technology</h3>
+          <p class="institution">GVN College · Manonmaniam Sundaranar University</p>
+          <div class="education-details">
+            <span><strong>Duration:</strong> June 2023 – March 2026</span>
+            <span><strong>Graduation:</strong> 2026</span>
+            <span><strong>CGPA:</strong> 7.76 / 10.0</span>
+            <span><strong>Location:</strong> Kovilpatti, Tamil Nadu</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Get In Touch</span>
+          <h2 class="section-title">Let's <span>Connect</span></h2>
+          <p class="section-description">Open to entry-level opportunities in cloud engineering, DevOps, and cloud support.</p>
+        </div>
+
+        <div class="contact-box">
+          <p>
+            As an aspiring Cloud & DevOps professional, I am eager to apply my knowledge of AWS, Python, and automation, gain hands-on industry experience, and contribute to building reliable cloud and software solutions.
+          </p>
+          <div class="contact-details">
+            <span>Email: <a href="mailto:santhanamari.gurunathan@gmail.com">santhanamari.gurunathan@gmail.com</a></span>
+            <span>Phone: <a href="tel:+919003321618">+91 9003321618</a></span>
+            <span>Bengaluru, Karnataka, India</span>
+          </div>
+          <div class="contact-buttons">
+            <a class="btn btn-primary" href="mailto:santhanamari.gurunathan@gmail.com">Email Me</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/santhanamarigurunathan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="btn btn-secondary" href="https://github.com/SanthanamariG/AWS-DevOps-Projects-Portfolio" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Santhanamari G. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
